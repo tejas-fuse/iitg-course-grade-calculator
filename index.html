@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IITG Grade & Target Calculator</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>🎓 IITG Course Grade Calculator</h1>
+    <p style="text-align:center; color:#666;">Select your course below. Max marks are pre-filled based on official reports.</p>
+
+    <div class="course-selector">
+        <label for="courseSelect"><strong>Select Course:</strong></label><br>
+        <select id="courseSelect" onchange="loadCourseData()">
+            <option value="custom">-- Custom / Manual Entry --</option>
+            <option value="da101" selected>DA 101 (Design & Analysis)</option>
+            <option value="da102">DA 102 (Room Scan/Environment)</option>
+            <option value="da103">DA 103 (Lab/Practical)</option>
+            <option value="da104">DA 104 (Complex Tests)</option>
+        </select>
+    </div>
+
+    <div class="grid-container">
+        <!-- PT Inputs -->
+        <div class="input-group">
+            <h3>PT Scores (90% Weight)</h3>
+            <div id="pt-inputs"></div>
+        </div>
+
+        <!-- NT Inputs -->
+        <div class="input-group">
+            <h3>NPT Scores (10% Weight)</h3>
+            <div id="nt-inputs"></div>
+        </div>
+    </div>
+
+    <button class="calculate-btn" onclick="calculate()">📊 Calculate Final Grade & PT6 Target</button>
+
+    <div id="result-section">
+        <h2>Results & Target Analysis</h2>
+        
+        <div class="summary-cards">
+            <div class="card">
+                <h3 id="res-percent">0%</h3>
+                <p>Final Percentage</p>
+            </div>
+            <div class="card main-grade">
+                <h3 id="res-grade">-</h3>
+                <p>Current Grade</p>
+            </div>
+            <div class="card">
+                <h3 id="res-pointer">0</h3>
+                <p>Grade Point</p>
+            </div>
+        </div>
+
+        <div class="analysis-box" id="pt6-analysis">
+            <!-- Dynamic text about PT6 will appear here -->
+        </div>
+
+        <div class="grid-container">
+            <div>
+                <h3>Score Breakdown</h3>
+                <table class="breakdown-table">
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Best 5 Avg (%)</th>
+                            <th>Weight</th>
+                            <th>Points</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>PTs</td>
+                            <td id="td-pt-avg">-</td>
+                            <td>90%</td>
+                            <td id="td-pt-contrib">-</td>
+                        </tr>
+                        <tr>
+                            <td>NPTs</td>
+                            <td id="td-nt-avg">-</td>
+                            <td>10%</td>
+                            <td id="td-nt-contrib">-</td>
+                        </tr>
+                        <tr style="font-weight:bold; background:#f8f9fa;">
+                            <td>Total</td>
+                            <td>-</td>
+                            <td>100%</td>
+                            <td id="td-total">-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <h3>Performance Chart</h3>
+                <canvas id="marksChart"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="scripts.js"></script>
+</body>
+</html>
