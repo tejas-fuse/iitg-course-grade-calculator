@@ -136,19 +136,19 @@ Calculations:
 
 ## Pre-configured Courses
 
-### DA 101 (Design & Analysis)
+### DA 101 (Basic English)
 - PT Max Marks: 20 (each)
 - NPT Max Marks: 10 (each)
 
-### DA 102 (Room Scan/Environment)
+### DA 102 (Data Analysis Basics)
 - PT Max Marks: 10 (each)
 - NPT Max Marks: 10 (each)
 
-### DA 103 (Lab/Practical)
+### DA 103 (Introduction to Statistics)
 - PT Max Marks: 10 (each)
 - NPT Max Marks: [4, 10, 10, 10, 10, 10]
 
-### DA 104 (Complex Tests)
+### DA 104 (C Programming)
 - PT Max Marks: [15, 15, 20, 20, 20, 20]
 - NPT Max Marks: 20 (each)
 
